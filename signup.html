@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — JustGoodTimes LLC</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background:#0f0f10; color:#f2f2f2; max-width:480px; margin:0 auto; padding:3rem 1.5rem; line-height:1.6; }
+  h1 { font-size:1.6rem; margin-bottom:0.25rem; }
+  p.sub { color:#a0a0a0; margin-bottom:2rem; }
+  label { display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#ddd; }
+  input[type="text"], input[type="tel"] {
+    width:100%; padding:0.7rem; margin-bottom:1.2rem; border-radius:6px;
+    border:1px solid #333; background:#1a1a1c; color:#fff; box-sizing:border-box; font-size:1rem;
+  }
+  .consent { display:flex; gap:0.6rem; align-items:flex-start; margin-bottom:1.5rem; }
+  .consent input { margin-top:0.3rem; }
+  .consent label { font-size:0.85rem; color:#c7c7c7; }
+  .consent a { color:#8ab4ff; }
+  button {
+    width:100%; padding:0.8rem; border:none; border-radius:6px;
+    background:#5b6cff; color:#fff; font-size:1rem; cursor:pointer;
+  }
+  #confirmation { display:none; margin-top:1.5rem; color:#8fd19e; font-size:0.95rem; }
+</style>
+</head>
+<body>
+  <h1>Get event invites &amp; updates</h1>
+  <p class="sub">JustGoodTimes sends event invitations and updates by text message.</p>
+
+  <form id="signupForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Mobile phone number</label>
+    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+
+    <div class="consent">
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">
+        I agree to receive event invitation and update text messages from JustGoodTimes LLC at the number above.
+        Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help.
+        View our <a href="/terms.html">Terms &amp; Conditions</a> and <a href="/privacy.html">Privacy Policy</a>.
+      </label>
+    </div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p id="confirmation">You're signed up! Check your phone for a confirmation text.</p>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('signupForm').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
